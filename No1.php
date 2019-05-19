@@ -38,6 +38,9 @@ while($res=fgets($fp)){
 		<title>掲示板</title>
 	</head>
 	<body>
+		<div id="header">
+							<h1>掲示板</h1>
+		</div>
 		<?php echo $message; ?>
 		<form method="post" action="">
 		名前：<input type="text"name="name" value="<?php echo $name;?>" >
