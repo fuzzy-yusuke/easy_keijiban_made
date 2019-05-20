@@ -39,7 +39,7 @@ while($res=fgets($fp)){
 	</head>
 	<body>
 		<div id="header">
-							<h1>掲示板</h1>
+		<div align="center"><h1>掲示板</h1></div>
 		</div>
 		<?php echo $message; ?>
 		<form method="post" action="">
