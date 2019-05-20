@@ -13,7 +13,7 @@ if(isset($_POST["send"]) === true){
 
     if($err_msg1 === "" && $err_msg2 === ""){
         $fp=fopen("data.txt" , "a");
-        fwrite($fp,$name."\t".$comment."\n");
+        fwrite($fp,$name."\t".$comment."\t".$time."\n"); //投稿した名前とコメントをファイルに書き込む
         $message="書き込みに成功しました";
     }
 }
@@ -25,7 +25,8 @@ while($res=fgets($fp)){
     $tmp=explode("\t", $res);
     $arr=array(
         "name" => $tmp[0],
-        "comment" => $tmp[1]
+        "comment" => $tmp[1],
+        "time" => date("Y/m/d") //ファイルに書き込まれたことを読み込んで変数に格納する、
     );
     $dataArr[]=$arr;
 }
