@@ -5,6 +5,7 @@ $err_msg2="";
 $message ="";
 $name    =(isset($_POST["name"]) === true)?$_POST["name"]: "";
 $comment =(isset($_POST["comment"]) === true)? trim($_POST["comment"]) : "";
+$time=date_default_timezone_set('Asia/Tokyo');
 
 //投稿がある場合、下記の処理を行う
 if(isset($_POST["send"]) === true){
@@ -53,7 +54,7 @@ while($res=fgets($fp)){
 		</form>
 		<dl>
 		<?php foreach($dataArr as $data):?>
-		<p><span><?php echo $data["name"]; ?></span>:<span><?php echo $data["comment"]; ?></span></p>
+		<p><span><?php echo $data["name"]."<br>(".$data["time"].")"; ?></span>:<span><?php echo $data["comment"]; ?></span></p>
 		<?php endforeach;?>
 		</dl>
 	</body>
